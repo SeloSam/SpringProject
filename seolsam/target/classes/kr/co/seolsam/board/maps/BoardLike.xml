@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardLike">
+	<select id="selectOne" resultType="kr.co.seolsam.board.dto.BoardLikeDTO" parameterType="int">
+		SELECT *
+		FROM TB_BOARD_LIKE
+		WHERE USER_ID = #{userId}
+	</select>
+	
+	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.BoardLikeDTO">
+		INSERT INTO TB_BOARD_LIKE(
+			LIKE_YN
+			,USER_ID
+			,DOC_ID
+			,REG_DT
+		)VALUES(
+			#{likeYn}
+			,#{userId}
+			,#{docId}
+			,SYSDATE
+		)
+	</insert>
+	
+	<select id="select">
+		SELECT *
+		FROM TB_BOARD_LIKE
+	</select>
+	
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardFile">
+	<select id="selectOne" parameterType="int" resultType="kr.co.seolsam.board.dto.BoardFileDTO">
+		SELECT *
+		FROM TB_BOARD_FILE
+		WHERE FILE_ID = #{fileId}
+	</select>
+
+
+	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.BoardFileDTO">
+		
+		<selectKey order="BEFORE" keyProperty="fileId" resultType="int">
+			select SEQ_BOARD_FILE.NEXTVAL FROM DUAL
+		</selectKey> 
+		
+		INSERT INTO TB_BOARD_FILE(
+			EXT
+			,ORG_FILE_NAME
+			,FILE_PATH
+			,NEW_FILE_NAME
+			,FILE_TYPE
+			,DOC_ID
+			,FILE_ID
+			,FILE_SIZE
+			,REG_DT
+		)VALUES(
+			#{ext}
+			,#{orgFileName}
+			,#{filePath}
+			,#{newFileName}
+			,#{fileType}
+			,#{docId}
+			,#{fileId}
+			,#{fileSize}
+			,SYSDATE
+		)
+	</insert>
+	<delete id="delete">
+		DELETE TB_BOARD_FILE
+		WHERE FILE_ID = #{fileId}
+	</delete>
+</mapper>

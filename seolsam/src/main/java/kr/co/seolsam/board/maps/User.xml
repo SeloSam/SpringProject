@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+	<select id="selectOne" parameterType="int" resultType="kr.co.seolsam.board.dto.UserDTO">
+		SELECT *
+		FROM TB_USER
+		WHERE USER_ID = #{userId}
+	</select>
+	
+	
+	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.UserDTO">
+		
+		<selectKey order="BEFORE" keyProperty="userId" resultType="int">
+			select SEQ_USER.NEXTVAL FROM DUAL
+		</selectKey>
+		
+		INSERT INTO TB_USER(
+			EMAIL
+			,NAME
+			,LGN_ID
+			,LGN_PW
+			,PHONE
+			,ROLE
+			,USER_ID
+			,STATUS
+			,REG_DT
+		)VALUES(
+			#{email}
+			,#{name}
+			,#{lgnId}
+			,#{lgnPw}
+			,#{phone}
+			,#{role}
+			,#{userId}
+			,#{status}
+			,SYSDATE
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE TB_USER
+		SET LGN_PW=#{lgnPw}, PHONE = #{phone}, EMAIL = #{email}
+		WHERE USER_ID = #{userId}
+	</update>
+	
+	<select id="selectOneByLgnId">
+		SELECT *
+		FROM TB_USER
+		WHERE LGN_ID = #{lgnId}
+	</select>
+	
+	
+	<select id="selectList" resultType="kr.co.seolsam.board.dto.UserDTO">
+		SELECT *
+		FROM TB_USER
+	</select>
+</mapper>

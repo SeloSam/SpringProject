@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardDoc">
+	<select id="selectOne" parameterType="int" resultType="kr.co.seolsam.board.dto.BoardDocDTO">
+		SELECT *
+		FROM TB_BOARD_DOC
+		WHERE DOC_ID = #{docId}
+	</select>
+	
+	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.BoardDocDTO">
+		
+		<selectKey order="BEFORE" keyProperty="docId" resultType="int">
+			select SEQ_BOARD_DOC.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO TB_BOARD_DOC(
+			TITLE
+			,USER_ID
+			,MAP_ID
+			,CNT_READ
+			,DOC_ID
+			,REG_DT
+			,BOARD_CONTENTS
+		)VALUES(
+			#{title}
+			,#{userId}
+			,#{mapId}
+			,#{cntRead}
+			,#{docId}
+			,SYSDATE
+			,#{boardContents}			
+		)
+	</insert>
+
+
+	<update id="update">
+		UPDATE TB_BOARD_DOC
+		SET TITLE=#{title}, BOARD_CONTENTS=#{boardContents}
+		WHERE DOC_ID=#{docId}
+	</update>
+</mapper>
