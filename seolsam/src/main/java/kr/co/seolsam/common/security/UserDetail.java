@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import kr.co.seolsam.user.dto.UserDTO;
+import kr.co.seolsam.board.dto.UserDTO;
 
 @SuppressWarnings("deprecation")
 public class UserDetail implements UserDetails {

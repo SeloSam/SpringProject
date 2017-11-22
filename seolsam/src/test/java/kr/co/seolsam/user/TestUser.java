@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.seolsam.user.dto.UserDTO;
-import kr.co.seolsam.user.service.IUserService;
+import kr.co.seolsam.board.dto.UserDTO;
+import kr.co.seolsam.board.service.IUserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={

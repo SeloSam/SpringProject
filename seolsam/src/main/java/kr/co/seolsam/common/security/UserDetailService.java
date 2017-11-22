@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import kr.co.seolsam.user.dto.UserDTO;
-import kr.co.seolsam.user.service.IUserService;
+import kr.co.seolsam.board.dto.UserDTO;
+import kr.co.seolsam.board.service.IUserService;
 
 
 public class UserDetailService implements UserDetailsService {

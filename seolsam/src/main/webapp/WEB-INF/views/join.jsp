@@ -1,26 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page pageEncoding="UTF-8"%>
+
+<c:set var="_ctx" 
+ value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" 
+ scope="application" />
+
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-<meta name="keywords" content="ÇÑ±¹°æ¿µ¿ø ÀÎÀç°³¹ß¿ø" />
-<meta name="subject" content="ÇÑ±¹°æ¿µ¿ø ÀÎÀç°³¹ß¿ø" />
-<meta name="description" content="¸Å´º¾ó" />
-<meta name="robots" content="±æ¶óÀâÀÌ, ¸Å´º¾ó" />
-<meta name="copyright" content="COPYRIGHT ¨Ï KMS. ALL RIGHTS RESERVED." />
-<title>test</title>
-
-
-<!-- css -->
-<link href="${_ctx}/res/css/base.css" rel="stylesheet" type="text/css" />
-<link href="${_ctx}/res/css/layout.css" rel="stylesheet" type="text/css" />
-
-<!-- js -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="${_ctx}/res/js/main.js"></script>
+	<c:import url="/WEB-INF/views/inc/head.jsp" />
+	<script>
+		function doJoin(){
+			alert(11);
+		}
+	</script>
 
 
 </head>
@@ -29,24 +23,24 @@
 
 <div id="loginWrap">
     <div id="join">
-    	<h1>Join</h1>
-        <form id="joinBlock" method="post" name="joinBlock" action="#" target="_self" title="È¸¿ø°¡ÀÔ" class="join_area">
+    	<h1>íšŒì›ê°€ì…</h1>
+        <form id="frmJoin" name="frmJoin" action="${_ctx}/join" method="post">
         	<dl>
-            	<dt>first name</dt>
-                <dd><input type="text" name="first name" placeholder="First Name" title="first name"></dd>
-                <dt>last name</dt>
-                <dd><input type="text" name="last name" placeholder="Last Name" title="Last name"></dd>
-                <dt>user Id</dt>
-                <dd><input type="text" name="user id" placeholder="User id" title="user id"></dd>
-                <dt>pw</dt>
-                <dd><input type="password" name="pw" placeholder="Password" title="pw"></dd>
-                <dt>date of birth</dt>
-                <dd><input type="text" name="date of birth" placeholder="date of birth" title="date of birth"></dd>
-                <dt>Phone number</dt>
-                <dd><input type="text" name="Phone number" placeholder="Phone number" title="Phone number"></dd>
+            	<dt>ë¡œê·¸ì¸ ID</dt>
+                <dd><input type="text" name="lgnId" placeholder="login Id"/></dd>
+                <dt>ë¡œê·¸ì¸ PW</dt>
+                <dd><input type="password" name="lgnPw" placeholder="login Pw"/></dd>
+                <dt>ë¡œê·¸ì¸ PW</dt>
+                <dd><input type="password" name="lgnPw" placeholder="login Pw"/></dd>
+                <dt>ì´ë¦„</dt>
+                <dd><input type="text" name="name" placeholder="name"/></dd>
+                <dt>í•¸ë“œí°</dt>
+                <dd><input type="text" name="phone" placeholder="phone"/></dd>
+                <dt>ì´ë©”ì¼</dt>
+                <dd><input type="text" name="email" placeholder="email"/></dd>
             </dl>
-            <a href="list" class="loginBtn">Save</a>
-            <a href="index" class="joinBtn">Cancel</a>
+            <a href="#" class="loginBtn" onclick="doJoin();">ì €ì¥</a>
+            <a href="index" class="joinBtn">ì·¨ì†Œ</a>
         </form>
     </div>
 </div>
