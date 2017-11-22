@@ -11,6 +11,10 @@
 <head>
 	<c:import url="/WEB-INF/views/inc/head.jsp" />
 	<script>
+		$(function(){
+			$("#frmJoin").validate();
+		});
+			
 		function doJoin(){
 			 $("#frmJoin").submit();
 		}
@@ -27,17 +31,17 @@
         <form id="frmJoin" name="frmJoin" action="${_ctx}/join" method="post">
         	<dl>
             	<dt>로그인 ID</dt>
-                <dd><input type="text" name="lgnId" placeholder="login Id"/></dd>
+                <dd><input type="text" name="lgnId" placeholder="login Id" requierd/></dd>
                 <dt>로그인 PW</dt>
-                <dd><input type="password" name="lgnPw" placeholder="login Pw"/></dd>
+                <dd><input type="password" name="lgnPw" placeholder="login Pw"requierd/></dd>
                 <dt>로그인 PW</dt>
-                <dd><input type="password" name="lgnPw" placeholder="login Pw"/></dd>
+                <dd><input type="password" name="lgnPw" placeholder="login Pw"requierd/></dd>
                 <dt>이름</dt>
-                <dd><input type="text" name="name" placeholder="name"/></dd>
+                <dd><input type="text" name="name" placeholder="name"requierd/></dd>
                 <dt>핸드폰</dt>
                 <dd><input type="text" name="phone" placeholder="phone"/></dd>
                 <dt>이메일</dt>
-                <dd><input type="text" name="email" placeholder="email"/></dd>
+                <dd><input type="text" name="email" placeholder="email" requierd/></dd>
             </dl>
             <a href="#" class="loginBtn" onclick="doJoin();">저장</a>
             <a href="index" class="joinBtn">취소</a>

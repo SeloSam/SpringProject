@@ -24,7 +24,11 @@
 <link href="${_ctx}/res/css/layout.css" rel="stylesheet" type="text/css" />
 
 <!-- js -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="${_ctx}/res/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${_ctx}/res/js/jquery.validate.js"></script>
+<script type="text/javascript" src="${_ctx}/res/js/messages_ko.js"></script>
+<script type="text/javascript" src="${_ctx}/res/js/additional-methods.js"></script>
+<script type="text/javascript" src="${_ctx}/res/js/jquery.form.js"></script>
 <script type="text/javascript" src="${_ctx}/res/js/main.js"></script>
 
 
