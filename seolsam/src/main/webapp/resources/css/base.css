@@ -282,3 +282,11 @@ img{vertical-align:top}
 .disPB{display:inline-block;*display:inline; vertical-align:top;zoom:1}
 
 
+label.error{
+	color : red;
+	font-size : italic;
+}
+
+input.error{
+	border: 1px dotted red !important;
+}
