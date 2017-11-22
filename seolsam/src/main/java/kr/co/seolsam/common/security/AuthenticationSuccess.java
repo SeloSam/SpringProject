@@ -13,7 +13,7 @@ import org.springframework.security.web.authentication.AbstractAuthenticationTar
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import kr.co.seolsam.board.dto.UserDTO;
+import kr.co.seolsam.user.dto.UserDTO;
 
 
 @Component

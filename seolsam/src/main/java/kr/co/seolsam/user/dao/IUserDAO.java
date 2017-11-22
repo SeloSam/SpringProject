@@ -1,10 +1,10 @@
-package kr.co.seolsam.board.dao;
+package kr.co.seolsam.user.dao;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import kr.co.seolsam.board.dto.UserDTO;
+import kr.co.seolsam.user.dto.UserDTO;
 @Repository
 public interface IUserDAO {
 	public void insertData(UserDTO UserDTO);

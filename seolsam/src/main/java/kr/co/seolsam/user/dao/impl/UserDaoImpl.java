@@ -1,12 +1,12 @@
-package kr.co.seolsam.board.dao.impl;
+package kr.co.seolsam.user.dao.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import kr.co.seolsam.board.dao.IUserDAO;
-import kr.co.seolsam.board.dto.UserDTO;
 import kr.co.seolsam.common.dao.support.BaseDaoSupport;
+import kr.co.seolsam.user.dao.IUserDAO;
+import kr.co.seolsam.user.dto.UserDTO;
 @Repository
 public class UserDaoImpl extends BaseDaoSupport implements IUserDAO {
 	public void insertData(UserDTO UserDTO) {

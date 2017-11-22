@@ -1,13 +1,13 @@
-package kr.co.seolsam.board.service.impl;
+package kr.co.seolsam.user.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.co.seolsam.board.dao.IUserDAO;
-import kr.co.seolsam.board.dto.UserDTO;
-import kr.co.seolsam.board.service.IUserService;
+import kr.co.seolsam.user.dao.IUserDAO;
+import kr.co.seolsam.user.dto.UserDTO;
+import kr.co.seolsam.user.service.IUserService;
 
 
 @Service

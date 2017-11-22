@@ -1,7 +1,5 @@
-package kr.co.seolsam;
+package kr.co.seolsam.common.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -10,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.co.seolsam.common.dto.HomeDTO;
 
 /**
  * Handles requests for the application home page.
@@ -38,6 +38,11 @@ public class HomeController {
 	public String login() {
 		logger.debug("login====>");
 		return "login";
+	}
+	@RequestMapping(value="/join", method=RequestMethod.GET)
+	public String join() {
+		logger.debug("join====>");
+		return "join";
 	}
 
 	@RequestMapping(value="/main/index", method=RequestMethod.GET)

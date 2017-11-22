@@ -15,7 +15,7 @@
 <meta name="description" content="매뉴얼" />
 <meta name="robots" content="길라잡이, 매뉴얼" />
 <meta name="copyright" content="COPYRIGHT ⓒ KMS. ALL RIGHTS RESERVED." />
-<title>test</title>
+<title>seolsam</title>
 
 
 <!-- css -->
@@ -35,7 +35,7 @@
 
 	
     <div id="login">
-    	<h1>Administrator Login</h1>
+    	<h1>Login</h1>
         <form id="loginBlock" method="post" name="loginBlock" action="#" target="_self" title="로그인" class="login_area">
         
         	<dl>
@@ -45,8 +45,8 @@
                 <dd><input type="password" name="pw" placeholder="Password" title="pw"></dd>
             </dl>
             
-            <a href="list.html" class="loginBtn">login</a>
-            <a href="join.html" class="joinBtn">join</a>
+            <a href="${_ctx}/list" class="loginBtn">로그인</a>
+            <a href="${_ctx}/join" class="joinBtn">회원가입</a>
         
         </form>
         

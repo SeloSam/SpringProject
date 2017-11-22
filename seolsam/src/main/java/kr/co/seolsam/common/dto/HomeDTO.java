@@ -1,4 +1,4 @@
-package kr.co.seolsam;
+package kr.co.seolsam.common.dto;
 
 public class HomeDTO {
 	private String name=null;

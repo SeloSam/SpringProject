@@ -1,4 +1,4 @@
-package kr.co.seolsam.board.dto;
+package kr.co.seolsam.user.dto;
 
 import java.util.Date;
 
