@@ -39,12 +39,12 @@ public class HomeController {
 		logger.debug("login====>");
 		return "login";
 	}
-	@RequestMapping(value="/join", method=RequestMethod.GET)
-	public String join() {
-		logger.debug("join====>");
-		return "join";
-	}
-
+	
+	
+	
+	
+	
+	
 	@RequestMapping(value="/main/index", method=RequestMethod.GET)
 	public void main(HomeDTO homeDTO, Model model) {
 		logger.debug("name==>"+homeDTO.getName());

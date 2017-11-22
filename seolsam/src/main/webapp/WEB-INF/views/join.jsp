@@ -12,7 +12,7 @@
 	<c:import url="/WEB-INF/views/inc/head.jsp" />
 	<script>
 		function doJoin(){
-			alert(11);
+			 $("#frmJoin").submit();
 		}
 	</script>
 
