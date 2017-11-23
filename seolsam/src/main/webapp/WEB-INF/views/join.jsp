@@ -31,20 +31,23 @@
         <form id="frmJoin" name="frmJoin" action="${_ctx}/join" method="post">
         	<dl>
             	<dt>로그인 ID</dt>
-                <dd><input type="text" name="lgnId" placeholder="login Id" required/></dd>
+                <dd><input type="text" name="lgnId" minlength="4" data-msg-minlength="야!!" maxlength="20" placeholder="아이디" style="width:60%" required/>
+                	<input type="button" onclick="" value="IDcheck" style="width:80px; height:40px; vertical-align: top;"/>
+                	<!-- <label id="lgnId-error" class="error" for="lgnId">필수 항목입니다.</label> -->
+                </dd>
                 <dt>로그인 PW</dt>
-                <dd><input type="password" name="lgnPw" placeholder="login Pw"required/></dd>
+                <dd><input type="password" name="lgnPw" id="lgnPw" minlength="6" maxlength="20" placeholder="비밀번호"required/></dd>
                 <dt>로그인 PW</dt>
-                <dd><input type="password" name="lgnPw" placeholder="login Pw"required/></dd>
+                <dd><input type="password" name="lgnPw1" placeholder="비밀번호" equalTo="#lgnPw" required/></dd>
                 <dt>이름</dt>
-                <dd><input type="text" name="name" placeholder="name"required/></dd>
+                <dd><input type="text" name="name" placeholder="이름" minlength="2" maxlength="10" required/></dd>
                 <dt>핸드폰</dt>
-                <dd><input type="text" name="phone" placeholder="phone"/></dd>
+                <dd><input type="text" name="phone" minlength="13" placeholder="전화번호"/></dd>
                 <dt>이메일</dt>
-                <dd><input type="text" name="email" placeholder="email" required/></dd>
+                <dd><input type="email" name="email" placeholder="이메일" required/></dd>
             </dl>
             <a href="#" class="loginBtn" onclick="doJoin();">저장</a>
-            <a href="index" class="joinBtn">취소</a>
+            <a href="${_ctx}/login" class="joinBtn">취소</a>
         </form>
     </div>
 </div>
