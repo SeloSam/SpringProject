@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.seolsam.board.dao.IUserDAO;
 import kr.co.seolsam.board.dto.UserDTO;
@@ -31,4 +33,12 @@ public class UserController {
 
 		userDaoImpl.insertData(userDTO);
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="/checkLgnId", method = RequestMethod.POST)
+	public String checkLgnId(@RequestParam(value="id", required=true) String lgnId) {
+		logger.debug("lgnId==>"+lgnId);
+		return "Y";
+	}
+	
 }

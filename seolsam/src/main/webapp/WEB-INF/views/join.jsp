@@ -20,7 +20,22 @@
 		}
 		//login id check
 		function checkLgnId(){
-			alert("1");
+			var lgnId=$("#lgnId").val();
+			if(lgnId==""){
+				$("#lgnId").focus();
+				alert("로그인ID를 입력하세요");
+			}else{
+				var url="${_ctx}/join/checkLgnId";
+				alert(22);
+				$.post(url, {id:lgnId}, function(data){
+					console.log(data);
+					if(data=="Y"){
+						alert("중복된 아이디입니다.");
+					}else{
+						alret("사용 가능한 아이디입니다.");
+					}
+				});
+			}
 		}
 	</script>
 
@@ -35,7 +50,7 @@
         <form id="frmJoin" name="frmJoin" action="${_ctx}/join" method="post">
         	<dl>
             	<dt>로그인 ID</dt>
-                <dd><input type="text" name="lgnId" minlength="4" data-msg-minlength="야!!" maxlength="20" placeholder="아이디" style="width:60%" required/>
+                <dd><input type="text" name="lgnId" minlength="4" id="lgnId" maxlength="20" placeholder="아이디" style="width:60%" required/>
                 	<input type="button" onclick="checkLgnId()" value="IDcheck" style="width:80px; height:40px; vertical-align: top; cursor:pointer;"/>
                 	<!-- <label id="lgnId-error" class="error" for="lgnId">필수 항목입니다.</label> -->
                 </dd>
