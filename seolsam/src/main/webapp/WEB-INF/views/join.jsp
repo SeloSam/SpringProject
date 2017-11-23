@@ -18,6 +18,10 @@
 		function doJoin(){
 			 $("#frmJoin").submit();
 		}
+		//login id check
+		function checkLgnId(){
+			alert("1");
+		}
 	</script>
 
 
@@ -32,7 +36,7 @@
         	<dl>
             	<dt>로그인 ID</dt>
                 <dd><input type="text" name="lgnId" minlength="4" data-msg-minlength="야!!" maxlength="20" placeholder="아이디" style="width:60%" required/>
-                	<input type="button" onclick="" value="IDcheck" style="width:80px; height:40px; vertical-align: top;"/>
+                	<input type="button" onclick="checkLgnId()" value="IDcheck" style="width:80px; height:40px; vertical-align: top; cursor:pointer;"/>
                 	<!-- <label id="lgnId-error" class="error" for="lgnId">필수 항목입니다.</label> -->
                 </dd>
                 <dt>로그인 PW</dt>
