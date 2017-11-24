@@ -43,10 +43,16 @@
 		WHERE USER_ID = #{userId}
 	</update>
 	
-	<select id="selectOneByLgnId">
+	<select id="selectOneByLgnId" parameterType="string" resultType="kr.co.seolsam.board.dto.UserDTO">
 		SELECT *
 		FROM TB_USER
 		WHERE LGN_ID = #{lgnId}
+	</select>
+	
+	<select id="selectOneEmail" parameterType="string" resultType="kr.co.seolsam.board.dto.UserDTO">
+		SELECT *
+		FROM TB_USER
+		WHERE EMAIL = #{email}
 	</select>
 	
 	
@@ -54,4 +60,6 @@
 		SELECT *
 		FROM TB_USER
 	</select>
+	
+	
 </mapper>

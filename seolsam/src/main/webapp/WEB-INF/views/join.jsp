@@ -26,13 +26,27 @@
 				alert("로그인ID를 입력하세요");
 			}else{
 				var url="${_ctx}/join/checkLgnId";
-				alert(22);
 				$.post(url, {id:lgnId}, function(data){
-					console.log(data);
-					if(data=="Y"){
-						alert("중복된 아이디입니다.");
+					if(data.code==0){
+						alert(data.msg);
 					}else{
-						alret("사용 가능한 아이디입니다.");
+						alert(data.msg);
+					}
+				});
+			}
+		}
+		
+		
+		function checkEmail(){
+			var email=$("#email").val();
+			if(email==""){
+				$("#email").focus();
+				alert("이메일을 작성하세요");
+			}else{
+				var url="${_ctx}/join/checkEmail";
+				$.post(url, {email:email}, function(data){
+					if(data.code==0){
+						
 					}
 				});
 			}
@@ -52,7 +66,6 @@
             	<dt>로그인 ID</dt>
                 <dd><input type="text" name="lgnId" minlength="4" id="lgnId" maxlength="20" placeholder="아이디" style="width:60%" required/>
                 	<input type="button" onclick="checkLgnId()" value="IDcheck" style="width:80px; height:40px; vertical-align: top; cursor:pointer;"/>
-                	<!-- <label id="lgnId-error" class="error" for="lgnId">필수 항목입니다.</label> -->
                 </dd>
                 <dt>로그인 PW</dt>
                 <dd><input type="password" name="lgnPw" id="lgnPw" minlength="6" maxlength="20" placeholder="비밀번호"required/></dd>
@@ -63,7 +76,9 @@
                 <dt>핸드폰</dt>
                 <dd><input type="text" name="phone" minlength="13" placeholder="전화번호"/></dd>
                 <dt>이메일</dt>
-                <dd><input type="email" name="email" placeholder="이메일" required/></dd>
+                <dd><input type="email" name="email" id="email"  style="width:60%" placeholder="이메일" required/>
+                	<input type="button" onclick="checkEmail()" value="Echeck" style="width:80px; height:40px; vertical-align: top; cursor:pointer;"/>
+            	</dd>
             </dl>
             <a href="#" class="loginBtn" onclick="doJoin();">저장</a>
             <a href="${_ctx}/login" class="joinBtn">취소</a>

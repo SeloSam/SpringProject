@@ -12,4 +12,7 @@ public interface IUserDAO {
 	public void update(UserDTO UserDTO);
 	public UserDTO selectOneByLgnId(String lgnId);
 	public List selectList();
+	
+	public UserDTO checkByLgnId(String lgnId);
+	public UserDTO selectOneEmail(String email);
 }
