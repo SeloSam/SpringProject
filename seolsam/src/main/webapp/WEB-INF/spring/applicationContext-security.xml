@@ -17,8 +17,18 @@
 		<intercept-url pattern="/index" access="permitAll " />
 		<intercept-url pattern="/login" access="permitAll " />
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
-		<form-login login-page="/login" default-target-url="/main/index" login-processing-url="/security/login" always-use-default-target="true" authentication-failure-url="/login?error=1"
-			username-parameter="lgnId" password-parameter="lgnPw" />
+		
+		<form-login 
+			login-page="/login" 
+			default-target-url="/main/index" 
+			login-processing-url="/security/login"
+			 
+			always-use-default-target="true" 
+			authentication-failure-url="/login?error=1"
+			username-parameter="id" 
+			password-parameter="pw" />
+		
+		
 		<remember-me />
 		<session-management>
 			<concurrency-control max-sessions="1" error-if-maximum-exceeded="false" />
