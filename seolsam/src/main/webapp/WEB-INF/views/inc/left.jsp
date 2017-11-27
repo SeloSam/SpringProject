@@ -1,4 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page pageEncoding="UTF-8"%>
 
     <div id="leftWrap">
@@ -11,7 +10,7 @@
                 <p  class="info_pic"><img src="${_ctx}/res/img/thum_img.jpg" alt="thum"></p>
             </div>
             
-            <span><a href="#">로그아웃</a></span>
+            <span><a href="${_ctx}/logout">로그아웃</a></span>
         
         </div>
         

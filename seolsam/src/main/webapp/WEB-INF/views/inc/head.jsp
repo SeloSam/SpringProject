@@ -1,18 +1,24 @@
 <%@ page language="java" 
 	contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
-    
+    pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
+<sec:authorize access="hasRole('ROLE_USER')">
+	<sec:authentication property="principal.user" var="user" scope="session"/>
+</sec:authorize>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-<meta name="keywords" content="ÇÑ±¹°æ¿µ¿ø ÀÎÀç°³¹ß¿ø" />
-<meta name="subject" content="ÇÑ±¹°æ¿µ¿ø ÀÎÀç°³¹ß¿ø" />
-<meta name="description" content="¸Å´º¾ó" />
-<meta name="robots" content="±æ¶óÀâÀÌ, ¸Å´º¾ó" />
-<meta name="copyright" content="COPYRIGHT ¨Ï KMS. ALL RIGHTS RESERVED." />
+<meta name="keywords" content="í•œêµ­ê²½ì˜ì› ì¸ìž¬ê°œë°œì›" />
+<meta name="subject" content="í•œêµ­ê²½ì˜ì› ì¸ìž¬ê°œë°œì›" />
+<meta name="description" content="ë§¤ë‰´ì–¼" />
+<meta name="robots" content="ê¸¸ë¼ìž¡ì´, ë§¤ë‰´ì–¼" />
+<meta name="copyright" content="COPYRIGHT â“’ KMS. ALL RIGHTS RESERVED." />
 
 
 
