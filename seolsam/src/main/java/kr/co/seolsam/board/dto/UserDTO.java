@@ -3,17 +3,17 @@ package kr.co.seolsam.board.dto;
 import java.util.Date;
 
 public class UserDTO {
-	private String email=null;
-	private String name=null;
-	private String lgnId=null;
-	private String lgnPw=null;
-	private String phone=null;
-	private String role=null;
+	private String email = null;
+	private String name = null;
+	private String lgnId = null;
+	private String lgnPw = null;
+	private String phone = null;
+	private String role = "USER";
 	
-	private Integer userId=null;
-	private Integer status=null;
+	private Integer userId = null;
+	private Integer status = 9;
 	
-	private Date regDt=null;
+	private Date regDt = null;
 
 	
 	

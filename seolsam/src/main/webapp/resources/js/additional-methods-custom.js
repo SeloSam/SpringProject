@@ -184,8 +184,8 @@ $.validator.addMethod( "phone", function( value, element ) {
 }, "올바른 폰번호를 입력해 주세요. ex)010-7777-7777" );
 
 $.validator.addMethod( "checkId", function( value, element ) {
-	return this.optional( element ) || /^[A-Za-z0-9]{5,15}$/.test( value );
-}, "영문 대소문자와 숫자를 조합해서 5~15자로 작성해주세요." ); 
+	return this.optional( element ) || /^[a-z0-9]{5,15}$/.test( value );
+}, "영문 소문자와 숫자를 조합해서 5~15자로 작성해주세요." ); 
 
 
 
