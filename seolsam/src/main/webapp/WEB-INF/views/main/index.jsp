@@ -1,15 +1,26 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" pageEncoding="UTF-8"%>
-<html>
+<%@ page pageEncoding="UTF-8"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>main index2 화면</title>
+	<c:import url="/WEB-INF/views/inc/head.jsp"/>
 </head>
 <body>
-<h1>
-	main index2 화면<br>
-	이름: ${homeDTO.name} <br>
-	나이: ${homeDTO.age} <br>
-</h1>
+
+	<div id="wrap">
+	
+		<c:import url="/WEB-INF/views/inc/menu.jsp"/>
+		<c:import url="/WEB-INF/views/inc/left.jsp"/>
+		  
+		<div id="rightWrap">
+			<div class="rightBlock">
+				<div class="page_top">
+					<h1>Main Page</h1>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
