@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,10 +16,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${User.name}��! ȸ�������� ���ϵ帳�ϴ�.
+	${User.name}님! 회원가입을 축하드립니다.
 	<br>
-	�α����� ���ֽñ� �ٶ��ϴ�.
+	로그인을 해주시길 바랍니다.
 	<br>
-	<a href="${_ctx}/login">�α��� ȭ������ �̵�</a>
+	<a href="${_ctx}/login">로그인 화면으로 이동</a>
 </body>
 </html>
