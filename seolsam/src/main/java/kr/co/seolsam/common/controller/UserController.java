@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,8 +58,10 @@ public class UserController {
 	 * @param userDTO
 	 * */
 	@RequestMapping(value="/success", method = RequestMethod.GET)
-	public void success(UserDTO userDTO) {
+	public String success(@ModelAttribute("User") UserDTO userDTO) {
 		logger.debug("회원가입 성공!==>"+userDTO.toString());
+		
+		return "success";
 	}
 	
 	
@@ -85,6 +88,8 @@ public class UserController {
 		return res;
 	}
 
+	
+	
 	@ResponseBody
 	@RequestMapping(value="/checkEmail", method = RequestMethod.POST)
 	public ResponseDTO checkEmail(@RequestParam(value="email", required=true) String email) {
