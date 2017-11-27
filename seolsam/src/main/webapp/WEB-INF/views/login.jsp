@@ -4,14 +4,27 @@
 <c:set var="_ctx" 
  value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" 
  scope="application" />
-
+	
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<%@ include file="/WEB-INF/views/inc/head.jsp" %>
-	<script type="text/javascript">
+	<script>
+	
+
+	/*<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+	  	alert("${SPRING_SECURITY_LAST_EXCEPTION.message}");
+	  	history.pushState(null, null, location.origin + location.pathname);
+	  	<c:remove var = "SPRING_SECURITY_LAST_EXCEPTION" scope = "session" />
+	  </c:if>*/
+	
 	$(function(){
+		var params=getUrlParams();
+		if(params.error==1){
+			alert("잘못된 회원정보 입니다. 다시 확인하십시오.");
+			history.pushState(null, null, location.origin + location.pathname);
+		}
 		$("#frmLogin").validate();
 		
 		//enter 입력시 로그인 버튼으로 
@@ -25,6 +38,13 @@
 			$("#frmLogin").submit();
 		});
 	});
+	
+	function getUrlParams(){
+		var params={};
+		window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+		return params;
+	}
+	
 	$(function(){
 		$("#login input[type='text'], input[type='password']").focusin(function(){
 			$(this).css("background-color","#98d5f3");
