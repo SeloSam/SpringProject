@@ -37,6 +37,7 @@
 	src="${_ctx}/res/js/additional-methods-custom.js"></script>
 <script type="text/javascript" src="${_ctx}/res/js/jquery.form.js"></script>
 <script type="text/javascript" src="${_ctx}/res/js/main.js"></script>
+<script type="text/javascript" src="${_ctx}/res/js/dtree.js"></script>
 
 
 

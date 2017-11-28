@@ -29,6 +29,11 @@ public class BoardMapDaoImpl extends BaseDaoSupport implements IBoardMapDAO {
 		return getSqlSession().selectList("BoardMap.selectList");
 	}
 
+	@Override
+	public List<BoardMapDTO> selectListByTree() {
+		return getSqlSession().selectList("BoardMap.selectListByTree");
+	}
+
 
 
 	/*@Override

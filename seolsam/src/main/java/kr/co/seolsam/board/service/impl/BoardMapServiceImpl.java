@@ -36,6 +36,11 @@ public class BoardMapServiceImpl implements IBoardMapService {
 		return BoardMapDAOImpl.selectList();
 	}
 
+	@Override
+	public List<BoardMapDTO> selectListByTree() {
+		return BoardMapDAOImpl.selectListByTree();
+	}
+
 	/*@Override
 	public void delete(BoardMapDTO boardMapDTO) {
 		BoardMapDAOImpl.delete(boardMapDTO);

@@ -13,5 +13,5 @@ public interface IBoardMapDAO {
 	public void update(BoardMapDTO boardMapDTO);
 	/*public void delete(BoardMapDTO boardMapDTO);*/
 	public List selectList();
+	public List<BoardMapDTO> selectListByTree();
 }
-

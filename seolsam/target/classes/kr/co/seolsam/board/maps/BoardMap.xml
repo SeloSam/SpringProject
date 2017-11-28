@@ -9,6 +9,10 @@
 		
 	</select>
 	
+	<select id="selectListByTree" resultType="kr.co.seolsam.board.dto.BoardMapDTO">
+		SELECT *
+		FROM TB_BOARD_MAP
+	</select>
 	
 	
 	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.BoardMapDTO">

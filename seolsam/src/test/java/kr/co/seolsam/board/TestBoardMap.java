@@ -73,6 +73,15 @@ public class TestBoardMap {
 		}
 		
 	}
+	
+	@Test
+	public void selectListByTree() {
+		List<BoardMapDTO> maplist = BoardMapServiceImpl.selectListByTree();
+		for (BoardMapDTO boardMapDTO : maplist) {
+			logger.debug("SelectList==>" + boardMapDTO.toString());
+		}
+	}
+	
 	/*@Test
 	public void remove() {
 		logger.debug("mapRemove==>"+"Remove");
