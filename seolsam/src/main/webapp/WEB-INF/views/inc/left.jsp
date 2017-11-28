@@ -1,9 +1,34 @@
 <%@ page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:set var="_ctx" 
+ value="${pageContext.request.contextPath == '/' ? '' : pageContext.request.contextPath }" 
+ scope="application" />
 
     <div id="leftWrap">
     
+    
+    <script>
+    
+    var d=null;
+    
+    $(function(){
+    	 loadingTree();
+     });
+     
+     //tree 가져오기
+     function loadingTree(){
+    	var url="${_ctx}/board/map/listByTree";
+    	$.get(url, function(data){
+    		d = new dTree('dtree');
+    		d.add(0,-1,'My example tree');
+			console.log(d.toString);
+			$("#category").html(d.toString);
+    	});
+     }
+    </script>
+    
     	<div id="infoWrap">
-        
         	<div class="info_txt">
                 <p class="info_name">${user.name}</p>
                 <p class="info_date">${user.email}</p>
@@ -18,10 +43,6 @@
         <div id="category">
         
         <!-- dtree 시작 -->
-            <div class="dtree">
-            </div>
-            <!-- dtree 끝 -->
-        
         </div>
     
     </div>

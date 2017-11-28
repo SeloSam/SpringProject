@@ -14,11 +14,12 @@ import kr.co.seolsam.board.service.IBoardMapService;
 @Controller
 @RequestMapping("/board/map")
 public class BoardMapController {
-	
-	@Autowired private IBoardMapService boardMapServiceImpl=null;
-	
+
+	@Autowired
+	private IBoardMapService boardMapServiceImpl = null;
+
 	@ResponseBody
-	@RequestMapping(value="/mapList", method=RequestMethod.GET)
+	@RequestMapping(value = "/listByTree", method = RequestMethod.GET)
 	public List<BoardMapDTO> listByTree() {
 		return boardMapServiceImpl.selectListByTree();
 	}

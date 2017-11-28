@@ -1,7 +1,7 @@
 /*--------------------------------------------------|
 | dTree 2.05 | www.destroydrop.com/javascript/tree/ |
 |---------------------------------------------------|
-| Copyright (c) 2002-2003 Geir Landrö               |
+| Copyright (c) 2002-2003 Geir Landrï¿½               |
 |                                                   |
 | This script can be used freely as long as all     |
 | copyright messages are intact.                    |
@@ -41,20 +41,20 @@ function dTree(objName) {
 		inOrder					: false
 	}
 	this.icon = {
-		root				: 'img/base.gif',
-		folder			: 'img/folder.gif',
-		folderOpen	: 'img/folderopen.gif',
-		node				: 'img/page.gif',
-		empty				: 'img/empty.gif',
-		line				: 'img/line.gif',
-		join				: 'img/join.gif',
-		joinBottom	: 'img/joinbottom.gif',
-		plus				: 'img/plus.gif',
-		plusBottom	: 'img/plusbottom.gif',
-		minus				: 'img/minus.gif',
-		minusBottom	: 'img/minusbottom.gif',
-		nlPlus			: 'img/nolines_plus.gif',
-		nlMinus			: 'img/nolines_minus.gif'
+		root				: '/seolsam/res/img/dtree_imgbase.gif',
+		folder			: '/seolsam/res/img/dtree_imgfolder.gif',
+		folderOpen	: '/seolsam/res/img/dtree_imgfolderopen.gif',
+		node				: '/seolsam/res/img/dtree_imgpage.gif',
+		empty				: '/seolsam/res/img/dtree_imgempty.gif',
+		line				: '/seolsam/res/img/dtree_imgline.gif',
+		join				: '/seolsam/res/img/dtree_imgjoin.gif',
+		joinBottom	: '/seolsam/res/img/dtree_imgjoinbottom.gif',
+		plus				: '/seolsam/res/img/dtree_imgplus.gif',
+		plusBottom	: '/seolsam/res/img/dtree_imgplusbottom.gif',
+		minus				: '/seolsam/res/img/dtree_imgminus.gif',
+		minusBottom	: '/seolsam/res/img/dtree_imgminusbottom.gif',
+		nlPlus			: '/seolsam/res/img/dtree_imgnolines_plus.gif',
+		nlMinus			: '/seolsam/res/img/dtree_imgnolines_minus.gif'
 	};
 	this.obj = objName;
 	this.aNodes = [];
