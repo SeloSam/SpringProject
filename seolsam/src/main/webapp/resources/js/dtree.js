@@ -41,20 +41,20 @@ function dTree(objName) {
 		inOrder					: false
 	}
 	this.icon = {
-		root				: '/seolsam/res/img/dtree_imgbase.gif',
-		folder			: '/seolsam/res/img/dtree_imgfolder.gif',
-		folderOpen	: '/seolsam/res/img/dtree_imgfolderopen.gif',
-		node				: '/seolsam/res/img/dtree_imgpage.gif',
-		empty				: '/seolsam/res/img/dtree_imgempty.gif',
-		line				: '/seolsam/res/img/dtree_imgline.gif',
-		join				: '/seolsam/res/img/dtree_imgjoin.gif',
-		joinBottom	: '/seolsam/res/img/dtree_imgjoinbottom.gif',
-		plus				: '/seolsam/res/img/dtree_imgplus.gif',
-		plusBottom	: '/seolsam/res/img/dtree_imgplusbottom.gif',
-		minus				: '/seolsam/res/img/dtree_imgminus.gif',
-		minusBottom	: '/seolsam/res/img/dtree_imgminusbottom.gif',
-		nlPlus			: '/seolsam/res/img/dtree_imgnolines_plus.gif',
-		nlMinus			: '/seolsam/res/img/dtree_imgnolines_minus.gif'
+		root				: '/seolsam/res/img/dtree_img/base.gif',
+		folder			: '/seolsam/res/img/dtree_img/folder.gif',
+		folderOpen	: '/seolsam/res/img/dtree_img/folderopen.gif',
+		node				: '/seolsam/res/img/dtree_img/page.gif',
+		empty				: '/seolsam/res/img/dtree_img/empty.gif',
+		line				: '/seolsam/res/img/dtree_img/line.gif',
+		join				: '/seolsam/res/img/dtree_img/join.gif',
+		joinBottom	: '/seolsam/res/img/dtree_img/joinbottom.gif',
+		plus				: '/seolsam/res/img/dtree_img/plus.gif',
+		plusBottom	: '/seolsam/res/img/dtree_img/plusbottom.gif',
+		minus				: '/seolsam/res/img/dtree_img/minus.gif',
+		minusBottom	: '/seolsam/res/img/dtree_img/minusbottom.gif',
+		nlPlus			: '/seolsam/res/img/dtree_img/nolines_plus.gif',
+		nlMinus			: '/seolsam/res/img/dtree_img/nolines_minus.gif'
 	};
 	this.obj = objName;
 	this.aNodes = [];

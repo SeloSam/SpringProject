@@ -22,8 +22,8 @@
     	$.get(url, function(data){
     		d = new dTree('dtree');
     		d.add(0,-1,'My example tree');
-			console.log(d.toString);
-			$("#category").html(d.toString);
+			console.log(d.toString());
+			$("#category").html(d.toString());
     	});
      }
     </script>
