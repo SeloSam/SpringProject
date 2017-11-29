@@ -6,7 +6,7 @@
 	prefix="sec"%>
 
 <sec:authorize access="hasRole('ROLE_USER')">
-	<sec:authentication property="principal.user" var="user" scope="session" />
+	<sec:authentication property="principal.user" var="_user" scope="session" />
 </sec:authorize>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

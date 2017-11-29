@@ -23,7 +23,6 @@
     		d = new dTree('d');
     		
     		if($.isArray(data)){
-	    		/* d.add(0,-1,'My example tree'); */
     			$(data).each(function(){
     				console.log(this);
     				
@@ -45,7 +44,6 @@
     	});
      }
     </script>
-    
     	<div id="infoWrap">
         	<div class="info_txt">
                 <p class="info_name">${user.name}</p>

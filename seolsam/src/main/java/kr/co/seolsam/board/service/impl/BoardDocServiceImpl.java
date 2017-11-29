@@ -33,5 +33,10 @@ public class BoardDocServiceImpl implements IBoardDocService {
 	public List<BoardDocDTO> list(BoardDocDTO boardDocDTO) {
 		return BoardDocDaoImpl.selectListByPaging(boardDocDTO);
 	}
+
+	@Override
+	public void write(BoardDocDTO boardDocDTO) {
+		BoardDocDaoImpl.insert(boardDocDTO);
+	}
 		
 }

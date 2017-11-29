@@ -16,7 +16,7 @@
     
     	<div class="rightBlock">
             <div class="page_top">
-                <h1>Page Title</h1>
+                <h1>${map.mapName}</h1>
             </div>
             
             <!-- 검색 시작 -->
@@ -161,7 +161,7 @@
                 </div>
     
                 <div class="btnSet">
-                    <a href="${_ctx}/board/doc/write?mapId=mapId" class="disPB btnBase">글쓰기</a>
+                    <a href="${_ctx}/board/doc/write?mapId=${map.mapId}" class="disPB btnBase">글쓰기</a>
                 </div>
                 
             </div>

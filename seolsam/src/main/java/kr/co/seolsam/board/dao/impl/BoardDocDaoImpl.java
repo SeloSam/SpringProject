@@ -28,4 +28,10 @@ public class BoardDocDaoImpl extends BaseDaoSupport implements IBoardDocDAO {
 	public List<BoardDocDTO> selectListByPaging(BoardDocDTO boardDocDTO) {
 		return getSqlSession().selectList("BoardDoc.selectListByPaging", boardDocDTO);
 	}
+
+	@Override
+	public void insert(BoardDocDTO boardDocDTO) {
+		getSqlSession().insert("BoardDoc.insert", boardDocDTO);
+	}
+	
 }
