@@ -1,5 +1,7 @@
 package kr.co.seolsam.board;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -51,7 +53,16 @@ public class TestBoardDoc {
 		doc.setDocId(1);
 		
 		boardDocServiceImpl.update(doc);
-		
-		
+	}
+	
+	@Test
+	public void list() {
+		BoardDocDTO list = new BoardDocDTO();
+		list.setMapId(8);
+		List<BoardDocDTO> pageList = boardDocServiceImpl.list(list);
+		for(BoardDocDTO boardDocDTO : pageList) {
+			logger.debug("list==>"+ boardDocDTO.toString());
+		}
+	
 	}
 }

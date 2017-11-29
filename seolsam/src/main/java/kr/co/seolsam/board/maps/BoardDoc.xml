@@ -7,6 +7,12 @@
 		WHERE DOC_ID = #{docId}
 	</select>
 	
+	<select id="selectListByPaging" parameterType="kr.co.seolsam.board.dto.BoardDocDTO" resultType="kr.co.seolsam.board.dto.BoardDocDTO">
+		SELECT *
+		FROM TB_BOARD_DOC
+		WHERE MAP_ID = #{mapId}
+	</select>
+	
 	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.BoardDocDTO">
 		
 		<selectKey order="BEFORE" keyProperty="docId" resultType="int">

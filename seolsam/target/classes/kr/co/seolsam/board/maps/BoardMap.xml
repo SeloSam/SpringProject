@@ -10,8 +10,9 @@
 	</select>
 	
 	<select id="selectListByTree" resultType="kr.co.seolsam.board.dto.BoardMapDTO">
-		SELECT *
-		FROM TB_BOARD_MAP
+		select * from tb_board_map
+		start with map_id = 1
+		connect by prior map_id=par_map_id
 	</select>
 	
 	

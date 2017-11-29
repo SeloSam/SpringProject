@@ -14,6 +14,7 @@
 		<intercept-url pattern="/" access="permitAll " />
 		<intercept-url pattern="/gugu/**" access="permitAll " />
 		<intercept-url pattern="/join/**" access="permitAll " />
+		<intercept-url pattern="/doc/**" access="permitAll " />
 		<intercept-url pattern="/index" access="permitAll " />
 		<intercept-url pattern="/login" access="permitAll " />
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />

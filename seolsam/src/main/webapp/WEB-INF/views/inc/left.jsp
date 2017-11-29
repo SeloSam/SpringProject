@@ -29,8 +29,11 @@
     				
     				if(this.parMapId==null){
     					d.add(this.mapId, -1, this.mapName);
-    				}else{
+    				}else if(this.mapType == 'F'){
     					d.add(this.mapId, this.parMapId, this.mapName);
+    					
+    				}else{
+    					d.add(this.mapId, this.parMapId, this.mapName, "${_ctx}/board/doc/list?mapId="+this.mapId);
     				}
     			});
     		}else{

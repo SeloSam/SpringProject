@@ -1,5 +1,7 @@
 package kr.co.seolsam.board.dao.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import kr.co.seolsam.board.dao.IBoardDocDAO;
@@ -20,5 +22,10 @@ public class BoardDocDaoImpl extends BaseDaoSupport implements IBoardDocDAO {
 	@Override
 	public void update(BoardDocDTO boardDocDTO) {
 		getSqlSession().update("BoardDoc.update", boardDocDTO);
+	}
+
+	@Override
+	public List<BoardDocDTO> selectListByPaging(BoardDocDTO boardDocDTO) {
+		return getSqlSession().selectList("BoardDoc.selectListByPaging", boardDocDTO);
 	}
 }

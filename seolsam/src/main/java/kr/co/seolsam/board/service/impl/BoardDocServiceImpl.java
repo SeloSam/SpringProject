@@ -1,5 +1,7 @@
 package kr.co.seolsam.board.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,11 @@ public class BoardDocServiceImpl implements IBoardDocService {
 	@Override
 	public void update(BoardDocDTO boardDocDTO) {
 		BoardDocDaoImpl.update(boardDocDTO);
+	}
+
+	@Override
+	public List<BoardDocDTO> list(BoardDocDTO boardDocDTO) {
+		return BoardDocDaoImpl.selectListByPaging(boardDocDTO);
 	}
 		
 }
