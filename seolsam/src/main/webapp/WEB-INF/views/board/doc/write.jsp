@@ -36,7 +36,7 @@
 	                    </tr>
 	                	</tbody>
 	                </table>
-	                
+	               
 	                <div class="btnSet alignCenter">
 	                    <a href="#" class="disPB btnBase" onclick="doWrite();"id = "btnSave">저장</a>
 	                    <a href="${_ctx}/list" class="disPB btnBase">취소</a>

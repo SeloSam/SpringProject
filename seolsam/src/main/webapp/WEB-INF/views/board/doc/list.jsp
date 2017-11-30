@@ -1,5 +1,7 @@
 <%@ page pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+ <%@ taglib uri="http://seolsam.com/jsp/jstl/pagetag" prefix="pagetag" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -60,105 +62,29 @@
                 <table class="base_tbl">
                     <thead>
                         <tr>
-                            <th width="8%">Num</th>
-                            <th>Subject</th>
-                            <th width="15%">date</th>
-                            <th width="10%">file</th>
-                            <th width="10%">view</th>
+                            <th width="8%">번호</th>
+                            <th>제목</th>
+                            <th width="15%">등록자</th>
+                            <th width="15%">등록일</th>
+                            <th width="10%">첨부파일</th>
+                            <th width="10%">조회수</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="view.html">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="txtCut alignLeft"><a href="#">Enter the Subject here!</a></td>
-                            <td>2016-04-07</td>
-                            <td>N</td>
-                            <td>101</td>
-                        </tr>
+                    	<c:forEach items="${list}" var="item">
+	                        <tr>
+	                            <td>${item.docId}</td>
+	                            <td class="txtCut alignLeft"><a href="#">${item.title}</a></td>
+	                            <td>${item.name}</td>
+	                            <td><fmt:formatDate value="${item.regDt}" pattern="yyyy-MM-dd" /></td>
+	                            <td>N</td>
+	                            <td>${item.cntRead}</td>
+	                        </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
                 
-                <div id="paging">
-                <p>
-                <span class="numPN"><a href="#">«</a></span>
-                <span class="numPN over left"><a href="#">&lt;</a></span>
-                <span class="Present"><a href="#">1</a></span>
-                <span><a href="#">2</a></span>
-                <span><a href="#">3</a></span>
-                <span><a href="#">4</a></span>
-                <span><a href="#">5</a></span>
-                <span><a href="#">6</a></span>
-                <span><a href="#">7</a></span>
-                <span><a href="#">8</a></span>
-                <span><a href="#">9</a></span>
-                <span class="dubble"><a href="#">10</a></span>
-                <span class="numPN  over right"><a href="#">&gt;</a></span>
-                <span class="numPN"><a href="#">»</a></span>
-                </p>
-                </div>
+                <pagetag:paging page="" script="goPage"></pagetag:paging>
     
                 <div class="btnSet">
                     <a href="${_ctx}/board/doc/write?mapId=${map.mapId}" class="disPB btnBase">글쓰기</a>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.seolsam.board.dao.IBoardDocDAO;
 import kr.co.seolsam.board.dto.BoardDocDTO;
+import kr.co.seolsam.board.dto.BoardSearchDTO;
 import kr.co.seolsam.board.service.IBoardDocService;
 
 @Service
@@ -30,13 +31,14 @@ public class BoardDocServiceImpl implements IBoardDocService {
 	}
 
 	@Override
-	public List<BoardDocDTO> list(BoardDocDTO boardDocDTO) {
-		return BoardDocDaoImpl.selectListByPaging(boardDocDTO);
+	public List<BoardDocDTO> list(BoardSearchDTO search) {
+		return BoardDocDaoImpl.selectListByPaging(search);
 	}
 
 	@Override
 	public void write(BoardDocDTO boardDocDTO) {
 		BoardDocDaoImpl.insert(boardDocDTO);
 	}
+
 		
 }

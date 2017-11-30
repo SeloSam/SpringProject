@@ -8,9 +8,12 @@
 	</select>
 	
 	<select id="selectListByPaging" parameterType="kr.co.seolsam.board.dto.BoardDocDTO" resultType="kr.co.seolsam.board.dto.BoardDocDTO">
-		SELECT *
-		FROM TB_BOARD_DOC
+		SELECT BD. *
+		 , FN_USERNAME(BD.USER_ID) AS NAME
+		FROM TB_BOARD_DOC BD
 		WHERE MAP_ID = #{mapId}
+		ORDER BY REG_DT DESC
+
 	</select>
 	
 	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.BoardDocDTO">

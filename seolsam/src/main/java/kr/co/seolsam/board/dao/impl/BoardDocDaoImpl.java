@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.co.seolsam.board.dao.IBoardDocDAO;
 import kr.co.seolsam.board.dto.BoardDocDTO;
+import kr.co.seolsam.board.dto.BoardSearchDTO;
 import kr.co.seolsam.common.dao.support.BaseDaoSupport;
 
 @Repository
@@ -25,8 +26,8 @@ public class BoardDocDaoImpl extends BaseDaoSupport implements IBoardDocDAO {
 	}
 
 	@Override
-	public List<BoardDocDTO> selectListByPaging(BoardDocDTO boardDocDTO) {
-		return getSqlSession().selectList("BoardDoc.selectListByPaging", boardDocDTO);
+	public List<BoardDocDTO> selectListByPaging(BoardSearchDTO search) {
+		return getSqlSession().selectList("BoardDoc.selectListByPaging", search);
 	}
 
 	@Override

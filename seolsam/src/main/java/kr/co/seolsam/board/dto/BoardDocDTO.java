@@ -6,12 +6,12 @@ public class BoardDocDTO {
 	
 	private String title=null;
 	private String boardContents=null;
+	private String name=null;
 
 	private Integer userId=null;
 	private Integer mapId=null;
-	private Integer cntRead=null;
+	private Integer cntRead=0;
 	private Integer docId=null;
-	
 	private Date regDt=null;
 
 	
@@ -76,6 +76,14 @@ public class BoardDocDTO {
 	public String toString() {
 		return "BoardDocDTO [title=" + title + ", boardContents=" + boardContents + ", userId=" + userId + ", mapId="
 				+ mapId + ", cntRead=" + cntRead + ", docId=" + docId + ", regDt=" + regDt + "]";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	
