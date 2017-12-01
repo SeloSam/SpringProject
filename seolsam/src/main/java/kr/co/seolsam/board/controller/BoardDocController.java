@@ -22,12 +22,9 @@ import kr.co.seolsam.board.service.IBoardMapService;
 @Controller
 @RequestMapping("/board/doc")
 public class BoardDocController {
-
 	
 	@Autowired	private IBoardMapService boardMapServiceImpl = null;
 	@Autowired	private IBoardDocService boardDocServiceImpl = null;
-	
-	
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public void listByPaging(Model model, @ModelAttribute("search") BoardSearchDTO search){
@@ -44,22 +41,14 @@ public class BoardDocController {
 		//## 게시판 목록을 가져온다.
 		List<BoardDocDTO> list = boardDocServiceImpl.list(search);
 		model.addAttribute("list", list);
-		
-		
 	}
-	
-	
 	
 	@RequestMapping(value="/write",method=RequestMethod.GET)
 	public void goWrite(BoardDocDTO boardDocDTO, Model model){
 		
 		BoardMapDTO mapDTO = boardMapServiceImpl.view(boardDocDTO.getMapId());
 		model.addAttribute("map", mapDTO);
-		
 	}
-	
-	 
-	
 	
 	@RequestMapping(value="/doWrite", method=RequestMethod.POST)
 	public String doWrite(BoardDocDTO docDTO,HttpSession session) {
@@ -69,7 +58,4 @@ public class BoardDocController {
 		
 		return "/list";
 	}
-	
-	
-	
 }

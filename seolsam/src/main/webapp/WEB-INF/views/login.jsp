@@ -38,13 +38,14 @@
 				$("#frmLogin").submit();
 			});
 		});
-		
+		  
 		function getUrlParams(){
 			var params={};
 			window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
 			return params;
 		}
 		
+		//focus가 되면 지정된 색으로 input창 안에 색변화하기
 		$(function(){
 			$("#login input[type='text'], input[type='password']").focusin(function(){
 				$(this).css("background-color","#98d5f3");
@@ -69,6 +70,9 @@
             </dl>
             <a href="javascript:;" id="btnLogin" class="loginBtn" >로그인</a>
             <a href="${_ctx}/join" class="joinBtn">회원가입</a>
+            
+	        <a href="${_ctx}/idck" id="btnIdck" class="idCkBtn">아이디</a>
+	        <a href="#" id="pwCk">/ 비밀번호 찾기</a>
         </form>
     </div>
 </div>

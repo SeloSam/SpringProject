@@ -3,9 +3,11 @@ package kr.co.seolsam.board.dto;
 import kr.co.seolsam.common.dto.PageDTO;
 
 public class BoardSearchDTO extends PageDTO{
+
 	private Integer mapId = null;
 	private String searchText = null;
 	private String searchType = null;
+	
 	public Integer getMapId() {
 		return mapId;
 	}

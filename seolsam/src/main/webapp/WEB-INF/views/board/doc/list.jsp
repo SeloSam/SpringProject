@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  <%@ taglib uri="http://seolsam.com/jsp/jstl/pagetag" prefix="pagetag" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,9 +10,8 @@
 	
 	<script>
 		function goPage(page){
-			console.log(page);
-			
-			document.location.href="${_ctx}/board/doc/list?mapId=${map.mapId}&page="+page;
+			$("#page").val(page);
+			$("#frmSearch").submit();
 		}
 	</script>
 </head>
@@ -29,40 +28,35 @@
             </div>
             
             <!-- 검색 시작 -->
-            <form id="searchEngine" method="post" name="searchEngine" action="#" target="_self" title="검색" class="search_area">
+            <form id="frmSearch" id="frmSearch" action="${_ctx}/board/doc/list"   method = "get" class="search_area">
+                <input type="hidden" name="page" id="page" value="1" />
+                <input type="hidden" name="mapId" value="${map.mapId}" />
                 
                 <dl>
-                    <dt>input[type=radio]</dt>
+                    <dt>검색타입</dt>
                     <dd>
-                        <label for="radio1"><input type="radio" id="radio1"> radio1</label>
-                        <label for="radio2"><input type="radio" id="radio2"> radio2</label>
-                        <label for="radio3"><input type="radio" id="radio3"> radio3</label>
-                    </dd>
-                    <dt>input[type=check]</dt>
-                    <dd>
-                        <label for="check1"><input type="checkbox" id="check1"> check1</label>
-                        <label for="check2"><input type="checkbox" id="check2"> check1</label>
-                        <label for="check3"><input type="checkbox" id="check3"> check3</label>
-                    </dd>
-                    <dt>input[type=text]</dt>
-                    <dd>
-                        <input type="text" id="text1" placeholder="글자입력" title="입력">
-                    </dd>
-                    <dt>select</dt>
-                    <dd>
-                        <select name="select" title="선택">
-                            <option value="select1">select1</option>
-                            <option value="select2">select2</option>
-                            <option value="select3">select3</option>
+                        <select name="searchType" style="height:30px;">
+                            <option value="">::검색목록::</option>
+                            <option value="T">제목</option>
+                            <option value="C">내용</option>
+                            <option value="R">작성자</option>
+                            <option value="TC">제목+내용</option>
                         </select>
                     </dd>
-                    <dt>input[type=submit]</dt>
+                    
+                    
+                    <dt>검색어</dt>
                     <dd>
-                        <input type="submit" title="입력">
+                    <input type="text" name="searchText" style="height:30px;" />
+                    </dd>
+                    
+                    <dd>
+                    <input type="submit" value="검색" style="width:50px; height:30px;"/>
                     </dd>
                 </dl>            
             </form>
             <!-- 검색 끝 -->
+
             
             <div class="boardWrap">
                 

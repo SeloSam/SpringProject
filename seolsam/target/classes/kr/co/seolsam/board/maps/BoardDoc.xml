@@ -11,6 +11,9 @@
 		SELECT COUNT(*)
 		FROM TB_BOARD_DOC BD
 		WHERE MAP_ID = #{mapId}
+       	<if test="searchType eq 'T'.toString()">
+			AND TITLE LIKE '%'|| #{searchText} ||'%'
+		</if>
 	</select>
 
 	<select id="selectListByPaging" parameterType="kr.co.seolsam.board.dto.BoardDocDTO" resultType="kr.co.seolsam.board.dto.BoardDocDTO">
@@ -24,6 +27,9 @@
 		        SELECT BD.*    
 		        FROM TB_BOARD_DOC BD
 		        WHERE MAP_ID = #{mapId}
+		        	<if test="searchType eq 'T'.toString()">
+						AND TITLE LIKE '%'|| #{searchText} ||'%'
+					</if>
 		        ORDER BY REG_DT DESC
 		    ) A
 		    WHERE ROWNUM <![CDATA[ < ]]> (#{page} * #{rows}) + 1
