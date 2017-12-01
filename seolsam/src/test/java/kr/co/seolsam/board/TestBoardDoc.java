@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.co.seolsam.board.dto.BoardDocDTO;
+import kr.co.seolsam.board.dto.BoardSearchDTO;
 import kr.co.seolsam.board.service.IBoardDocService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -55,7 +56,7 @@ public class TestBoardDoc {
 		boardDocServiceImpl.update(doc);
 	}
 	
-	@Test
+	/*@Test
 	public void list() {
 		BoardDocDTO list = new BoardDocDTO();
 		list.setMapId(8);
@@ -64,5 +65,7 @@ public class TestBoardDoc {
 			logger.debug("list==>"+ boardDocDTO.toString());
 		}
 	
-	}
+	}*/
+	
+	
 }

@@ -13,4 +13,6 @@ public interface IBoardDocService {
 	public BoardDocDTO view(Integer docId);
 	public void update(BoardDocDTO boardDocDTO);
 	public List<BoardDocDTO> list(BoardSearchDTO search);
+	
+	public Integer count(BoardSearchDTO search);
 }

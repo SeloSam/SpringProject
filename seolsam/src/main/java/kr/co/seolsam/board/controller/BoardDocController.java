@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -29,14 +30,22 @@ public class BoardDocController {
 	
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public void listByPaging(Model model,BoardSearchDTO search){
-		
+	public void listByPaging(Model model, @ModelAttribute("search") BoardSearchDTO search){
+				
 		//1. map 정보를 가져온다
 		BoardMapDTO mapDTO = boardMapServiceImpl.view(search.getMapId());
 		model.addAttribute("map", mapDTO);
-		//2.게시판 목록을 가져온다.
+		
+		//## 게시판 총 갯수를 가져온다.
+		search.setRows(3);
+		int total = boardDocServiceImpl.count(search);
+		search.setTotal(total);
+		
+		//## 게시판 목록을 가져온다.
 		List<BoardDocDTO> list = boardDocServiceImpl.list(search);
 		model.addAttribute("list", list);
+		
+		
 	}
 	
 	

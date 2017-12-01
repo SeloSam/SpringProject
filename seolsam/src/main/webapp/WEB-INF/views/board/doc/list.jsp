@@ -8,6 +8,13 @@
 <head>
 	<c:import url="/WEB-INF/views/inc/head.jsp"/>
 	
+	<script>
+		function goPage(page){
+			console.log(page);
+			
+			document.location.href="${_ctx}/board/doc/list?mapId=${map.mapId}&page="+page;
+		}
+	</script>
 </head>
 <body>
 	<div id="wrap">
@@ -84,7 +91,7 @@
                     </tbody>
                 </table>
                 
-                <pagetag:paging page="" script="goPage"></pagetag:paging>
+                <pagetag:paging page="${search}" script="goPage"></pagetag:paging>
     
                 <div class="btnSet">
                     <a href="${_ctx}/board/doc/write?mapId=${map.mapId}" class="disPB btnBase">글쓰기</a>

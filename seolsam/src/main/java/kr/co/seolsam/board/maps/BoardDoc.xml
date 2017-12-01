@@ -7,6 +7,12 @@
 		WHERE DOC_ID = #{docId}
 	</select>
 	
+	<select id="selectCount" parameterType="kr.co.seolsam.board.dto.BoardDocDTO" resultType="int">
+		SELECT COUNT(*)
+		FROM TB_BOARD_DOC BD
+		WHERE MAP_ID = #{mapId}
+	</select>
+
 	<select id="selectListByPaging" parameterType="kr.co.seolsam.board.dto.BoardDocDTO" resultType="kr.co.seolsam.board.dto.BoardDocDTO">
 		SELECT BD. *
 		 , FN_USERNAME(BD.USER_ID) AS NAME
@@ -15,6 +21,8 @@
 		ORDER BY REG_DT DESC
 
 	</select>
+
+
 	
 	<insert id="insertData" parameterType="kr.co.seolsam.board.dto.BoardDocDTO">
 		

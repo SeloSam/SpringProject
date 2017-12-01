@@ -34,5 +34,10 @@ public class BoardDocDaoImpl extends BaseDaoSupport implements IBoardDocDAO {
 	public void insert(BoardDocDTO boardDocDTO) {
 		getSqlSession().insert("BoardDoc.insert", boardDocDTO);
 	}
+
+	@Override
+	public Integer selectCount(BoardSearchDTO search) {
+		return getSqlSession().selectOne("BoardDoc.selectCount", search);
+	}
 	
 }

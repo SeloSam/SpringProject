@@ -11,4 +11,6 @@ public interface IBoardDocDAO {
 	public BoardDocDTO selectOne(Integer docId);
 	public void update(BoardDocDTO boardDocDTO);
 	public List<BoardDocDTO> selectListByPaging(BoardSearchDTO search);
+	
+	public Integer selectCount(BoardSearchDTO search);
 }

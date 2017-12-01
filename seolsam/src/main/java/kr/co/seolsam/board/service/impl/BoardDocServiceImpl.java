@@ -40,5 +40,10 @@ public class BoardDocServiceImpl implements IBoardDocService {
 		BoardDocDaoImpl.insert(boardDocDTO);
 	}
 
+	@Override
+	public Integer count(BoardSearchDTO search) {
+		return BoardDocDaoImpl.selectCount(search);
+	}
+
 		
 }
