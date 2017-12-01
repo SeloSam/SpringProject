@@ -14,11 +14,21 @@
 	</select>
 
 	<select id="selectListByPaging" parameterType="kr.co.seolsam.board.dto.BoardDocDTO" resultType="kr.co.seolsam.board.dto.BoardDocDTO">
-		SELECT BD. *
-		 , FN_USERNAME(BD.USER_ID) AS NAME
-		FROM TB_BOARD_DOC BD
-		WHERE MAP_ID = #{mapId}
-		ORDER BY REG_DT DESC
+		SELECT B.*
+		    , FN_USERNAME(B.USER_ID) AS NAME
+		FROM( 
+		    SELECT 
+		        ROWNUM RNUM
+		        , A.* 
+		    FROM(
+		        SELECT BD.*    
+		        FROM TB_BOARD_DOC BD
+		        WHERE MAP_ID = #{mapId}
+		        ORDER BY REG_DT DESC
+		    ) A
+		    WHERE ROWNUM <![CDATA[ < ]]> (#{page} * #{rows}) + 1
+		)B
+		WHERE RNUM <![CDATA[ > ]]> (#{page} - 1) * #{rows}
 
 	</select>
 
