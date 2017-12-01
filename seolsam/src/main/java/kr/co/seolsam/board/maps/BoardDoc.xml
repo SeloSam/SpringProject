@@ -63,29 +63,6 @@
 			,#{boardContents}			
 		)
 	</insert>
-	<!-- <insert id="insert" parameterType="kr.co.seolsam.board.dto.BoardDocDTO">
-		
-		<selectKey order="BEFORE" keyProperty="docId" resultType="int">
-			select SEQ_BOARD_DOC.NEXTVAL FROM DUAL
-		</selectKey>
-		INSERT INTO TB_BOARD_DOC(
-			TITLE
-			,USER_ID
-			,MAP_ID
-			,CNT_READ
-			,DOC_ID
-			,REG_DT
-			,BOARD_CONTENTS
-		)VALUES(
-			#{title}
-			,#{userId}
-			,#{mapId}
-			, 0
-			,#{docId}
-			, SYSDATE
-			,#{boardContents}			
-		) 
-	</insert>-->
 	
 	<update id="update">
 		UPDATE TB_BOARD_DOC

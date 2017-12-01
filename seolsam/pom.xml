@@ -185,7 +185,12 @@
 			<artifactId>joda-time</artifactId>
 			<version>1.6</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/nl.captcha/simplecaptcha -->
+		<dependency>
+			<groupId>nl.captcha</groupId>
+			<artifactId>simplecaptcha</artifactId>
+			<version>1.2.1</version>
+		</dependency>
 
 
 		<!-- Test -->
@@ -203,6 +208,15 @@
 			<name>ORACLE JDBC Repository</name>
 			<url>http://maven.jahia.org/maven2</url>
 		</repository>
+
+		<repository>
+			<id>enonic</id>
+			<name>Enonic Repository</name>
+			<url>http://repo.enonic.com/public/</url>
+		</repository>
+
+
+
 	</repositories>
 
 	<build>

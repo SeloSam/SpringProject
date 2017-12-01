@@ -30,8 +30,30 @@
 		});
 			
 		function doJoin(){
-			 $("#frmJoin").submit();
+			if($("#frmJoin").valid()){
+				$.get("${_ctx}/captcha/isRight", {captcha : $("#captcha").val()}, function(data){
+					//captcha성공시
+					if(data == 1){
+						var url = "/join";
+						$.post=(url, $("#frmJoin").serialize(), function(data){
+							if(data == 1){
+								alert("회원가입에 성공하셨습니다.");
+								document.location.href="/seolsam/index";
+							}else{
+								alert("회원가입에 실패했습니다. 관리자에게 문의 ㄱㄱ");
+							}
+						});
+					}else{
+						alert("캡챠 문자 다시 확인");
+					}
+				});
+			} 
+			
+			
+			$("#frmJoin").submit();
 		}
+		
+		
 		
 		//login id check
 		function checkLgnId(){
@@ -53,6 +75,9 @@
 			}
 		}
 		
+		$("#imgCaptcha").click(function(){
+			$(this).attr("src", "${_ctx}/captcha/index");
+		});
 		
 		
 		//email check
@@ -100,6 +125,11 @@
                 <dt>이메일</dt>
                 <dd><input type="email" name="email" id="email"  style="width:60%" placeholder="이메일" required/>
                 	<input type="button" onclick="checkEmail()" value="Echeck" style="width:80px; height:40px; vertical-align: top; cursor:pointer;"/>
+            	</dd>
+                <dt>캡챠</dt>
+                <dd>
+					<img src="${_ctx}/captcha/index" style="cursor: pointer;" />
+                	<input type="text" name="captcha" id="captcha" placeholder="이미지 문자 작성" style="width:238px" required/>
             	</dd>
             </dl>
             <a href="#" class="loginBtn" onclick="doJoin();">저장</a>
