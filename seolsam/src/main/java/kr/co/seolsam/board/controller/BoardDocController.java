@@ -51,11 +51,17 @@ public class BoardDocController {
 	}
 	
 	@RequestMapping(value="/doWrite", method=RequestMethod.POST)
-	public String doWrite(BoardDocDTO docDTO,HttpSession session) {
-		UserDTO userDTO = (UserDTO)session.getAttribute("_user");
-		docDTO.setUserId(userDTO.getUserId());
-		boardDocServiceImpl.write(docDTO);
+	public String doWrite(Model model, BoardDocDTO docDTO, HttpSession session) {
 		
-		return "/list";
+		UserDTO userDTO = (UserDTO)session.getAttribute("_user");
+		
+		BoardMapDTO mapDTO = boardMapServiceImpl.view(docDTO.getMapId());
+		model.addAttribute("map", mapDTO);
+		
+		docDTO.setUserId(userDTO.getUserId());
+		boardDocServiceImpl.insertData(docDTO);
+		
+		
+		return "/board/doc/list";
 	}
 }

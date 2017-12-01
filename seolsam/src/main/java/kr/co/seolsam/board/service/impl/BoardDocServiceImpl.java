@@ -35,10 +35,6 @@ public class BoardDocServiceImpl implements IBoardDocService {
 		return BoardDocDaoImpl.selectListByPaging(search);
 	}
 
-	@Override
-	public void write(BoardDocDTO boardDocDTO) {
-		BoardDocDaoImpl.insert(boardDocDTO);
-	}
 
 	@Override
 	public Integer count(BoardSearchDTO search) {

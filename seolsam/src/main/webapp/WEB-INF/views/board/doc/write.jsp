@@ -7,8 +7,11 @@
 	<c:import url="/WEB-INF/views/inc/head.jsp"/>
 	<script>
 	function doWrite(){
-		$("#frmWrap").submit();
+		$("#frmWrite").submit();
 	};
+	$(document).ready(function(){
+		
+	});
 	</script>
 </head>
 <body>
@@ -23,7 +26,7 @@
             </div>
             
             <div class="boardWrap">
-               	<form action="${_ctx}/board/doc/doWrite" id="frmWrap" method="post">
+               	<form action="${_ctx}/board/doc/doWrite?mapId=${map.mapId}" id="frmWrite" method="post">
                		<input type="hidden" name="mapId" value="${map.mapId}"/>
 	                <table class="base_tbl tbl_write">
 	                	<tbody><tr>

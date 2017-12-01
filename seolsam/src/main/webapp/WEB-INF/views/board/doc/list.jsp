@@ -9,10 +9,15 @@
 	<c:import url="/WEB-INF/views/inc/head.jsp"/>
 	
 	<script>
-		function goPage(page){
-			$("#page").val(page);
-			$("#frmSearch").submit();
-		}
+	$(function(){
+		$("#frmSearch select#searchType option[value='${search.searchType}']").attr("selected",true);
+	});
+	
+	function goPage(page){
+		$("#page").val(page);
+		$("#frmSearch").submit();
+	}
+	
 	</script>
 </head>
 <body>
@@ -35,7 +40,7 @@
                 <dl>
                     <dt>검색타입</dt>
                     <dd>
-                        <select name="searchType" style="height:30px;">
+                        <select name="searchType" id="searchType" style="height:30px;">
                             <option value="">::검색목록::</option>
                             <option value="T">제목</option>
                             <option value="C">내용</option>
@@ -47,11 +52,11 @@
                     
                     <dt>검색어</dt>
                     <dd>
-                    <input type="text" name="searchText" style="height:30px;" />
+                   		<input type="text" name="searchText" value="${search.searchText}" style="height:30px;" />
                     </dd>
                     
                     <dd>
-                    <input type="submit" value="검색" style="width:50px; height:30px;"/>
+                    	<input type="submit" value="검색" style="width:50px; height:30px;"/>
                     </dd>
                 </dl>            
             </form>

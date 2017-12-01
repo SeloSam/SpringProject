@@ -63,7 +63,7 @@
 			,#{boardContents}			
 		)
 	</insert>
-	<insert id="insert" parameterType="kr.co.seolsam.board.dto.BoardDocDTO">
+	<!-- <insert id="insert" parameterType="kr.co.seolsam.board.dto.BoardDocDTO">
 		
 		<selectKey order="BEFORE" keyProperty="docId" resultType="int">
 			select SEQ_BOARD_DOC.NEXTVAL FROM DUAL
@@ -84,8 +84,8 @@
 			,#{docId}
 			, SYSDATE
 			,#{boardContents}			
-		)
-	</insert>
+		) 
+	</insert>-->
 	
 	<update id="update">
 		UPDATE TB_BOARD_DOC

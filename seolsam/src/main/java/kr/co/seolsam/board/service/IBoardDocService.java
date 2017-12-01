@@ -8,7 +8,6 @@ import kr.co.seolsam.board.dto.BoardSearchDTO;
 public interface IBoardDocService {
 	public void insertData(BoardDocDTO boardDocDTO);
 	
-	public void write(BoardDocDTO boardDocDTO);
 	
 	public BoardDocDTO view(Integer docId);
 	public void update(BoardDocDTO boardDocDTO);
