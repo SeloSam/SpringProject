@@ -37,7 +37,7 @@
 				$.get("${_ctx}/captcha/isRight", {captcha : $("#captcha").val()}, function(data){
 					//captcha성공시
 					if(data == 1){
-						var url = "/join";
+						var url = "seolsam/join";
 						$.post=(url, $("#frmJoin").serialize(), function(data){
 							if(data == 1){
 								alert("회원가입에 성공하셨습니다.");
@@ -58,7 +58,7 @@
 		
 		
 		
-		//login id check
+		//login id check1
 		function checkLgnId(){
 			var lgnId=$("#lgnId").val();
 			if(lgnId==""){

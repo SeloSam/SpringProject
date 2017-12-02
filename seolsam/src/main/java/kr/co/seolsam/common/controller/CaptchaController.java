@@ -31,7 +31,6 @@ public class CaptchaController {
 		response.setContentType("image/png");
 		CaptchaServletUtil.writeImage(response, captcha.getImage()); // 이미지 그리기
 		session.setAttribute("captcha", captcha.getAnswer()); // 값 저장
-		
 	}
 	
 	@ResponseBody
@@ -39,9 +38,10 @@ public class CaptchaController {
 	public Integer isRight(@RequestParam("captcha")String captcha,HttpSession session) {
 		String answer = (String)session.getAttribute("captcha");
 		if(captcha.equals(answer)) {
-			return 1;
+			return 1;//success;
+		}else {
+			return 0;//false;
 		}
-		return 0;
 	}
 	
 }
