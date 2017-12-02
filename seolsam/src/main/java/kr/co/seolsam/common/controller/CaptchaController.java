@@ -35,7 +35,7 @@ public class CaptchaController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/isRight", method = RequestMethod.GET)
+	@RequestMapping(value = "/isRight", method = RequestMethod.POST)
 	public Integer isRight(@RequestParam("captcha")String captcha,HttpSession session) {
 		String answer = (String)session.getAttribute("captcha");
 		if(captcha.equals(answer)) {

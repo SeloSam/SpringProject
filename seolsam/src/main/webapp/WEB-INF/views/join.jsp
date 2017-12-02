@@ -27,6 +27,9 @@
 			$("#lgnId").focus(function(){
 				$("#isCheckedLgnId").val("N");
 			});
+			$("#imgCaptcha").click(function(){
+	 			$(this).attr("src", "${_ctx}/captcha/index");
+			});
 		});
 			
 		function doJoin(){
@@ -74,10 +77,6 @@
 				});
 			}
 		}
-		
-		$("#imgCaptcha").click(function(){
-			$(this).attr("src", "${_ctx}/captcha/index");
-		});
 		
 		
 		//email check
@@ -128,7 +127,7 @@
             	</dd>
                 <dt>캡챠</dt>
                 <dd>
-					<img src="${_ctx}/captcha/index" style="cursor: pointer;" />
+					<img src="${_ctx}/captcha/index" id="imgCaptcha" style="cursor:pointer;" />
                 	<input type="text" name="captcha" id="captcha" placeholder="이미지 문자 작성" style="width:238px" required/>
             	</dd>
             </dl>
