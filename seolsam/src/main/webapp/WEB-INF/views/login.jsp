@@ -71,8 +71,9 @@
             <a href="javascript:;" id="btnLogin" class="loginBtn" >로그인</a>
             <a href="${_ctx}/join" class="joinBtn">회원가입</a>
             
-	        <a href="${_ctx}/idck" id="btnIdck" class="idCkBtn">아이디</a>
-	        <a href="#" id="pwCk">/ 비밀번호 찾기</a>
+	        <a href="/find/findid" id="btnIdck" >아이디</a>
+			<a href="/find/findpw" id="pwCk">/ 비밀번호 찾기</a> 
+            
         </form>
     </div>
 </div>
